@@ -90,7 +90,7 @@ form{
 }
 .btn-1:hover {
    background: rgb(0, 0, 0);
-background: linear-gradient(0deg, rgb(92, 2, 2) 0%, rgb(255, 0, 0) 100%);
+  background: linear-gradient(0deg, rgb(92, 2, 2) 0%, rgb(255, 0, 0) 100%);
 }
 
 
