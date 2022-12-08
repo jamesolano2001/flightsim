@@ -285,7 +285,7 @@ const flightsLayer = new VectorLayer({
 map.addLayer(flightsLayer);
 
 const pointsPerMs = 0.02;
-function animateFlights(event) {
+function animateFlights(event) {//The line is gradually going towards the destination from the origin
   if(buttonClicked){
     const vectorContext = getVectorContext(event);
     const frameState = event.frameState;
@@ -331,7 +331,7 @@ function addLater(features, timeout) {
         start += duration;
       });
       }
-    },timeout); //The line is gradually going towards the destination from the origin
+    },timeout); 
 }
 /**
  * End of flight path code
