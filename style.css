@@ -8,20 +8,23 @@
 body{
   background-color: black;
 }
+h1{
+  font-weight: bold;
+}
 #top{
 	background-color: black ;
-
   padding-top:1%;
-
+  padding-bottom: 1%;
   float:right;
   margin-top: -15px;
 }
 
 #options{
   float:left;
-  position: absolute;
 }
 input, textarea, select {
+  float:left;
+  margin-top: 0.2em;
   background-color : rgb(255, 0, 0);
   color : #000;
   }
@@ -35,7 +38,7 @@ input, textarea, select {
 
 #type{
   margin-right: 20px;
-  float:right;
+  float:left;
 }
 h1 {
   font-size: 1.5rem;
