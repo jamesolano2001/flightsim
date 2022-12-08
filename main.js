@@ -84,22 +84,20 @@ const typeSelect = document.getElementById('type');
 const formatLength = function (line) {
   const length = getLength(line);
   let output;
-  if (length > 100) {
+  if (length > 100) 
     output = Math.round((length / 1000) * 100) / 100 + ' ' + 'km';
-  } else {
+  else 
     output = Math.round(length * 100) / 100 + ' ' + 'm';
-  }
   return output;
 };
 
 const formatArea = function (polygon) {
   const area = getArea(polygon);
   let output;
-  if (area > 10000) {
+  if (area > 10000)
     output = Math.round((area / 1000000) * 100) / 100 + ' ' + 'km<sup>2</sup>';
-  } else {
+  else 
     output = Math.round(area * 100) / 100 + ' ' + 'm<sup>2</sup>';
-  }
   return output;
 };
 
@@ -143,10 +141,10 @@ function addInteraction() {
     listener = sketch.getGeometry().on('change', function (evt) {
       const geom = evt.target;
       let output;
-      if (geom instanceof Polygon) {
+      if (geom instanceof Polygon) {  //Checks if we are calculating area
         output = formatArea(geom);
         tooltipCoord = geom.getInteriorPoint().getCoordinates();
-      } else if (geom instanceof LineString) {
+      } else if (geom instanceof LineString) {  //Checks if we are calculating distance instead
         output = formatLength(geom);
         tooltipCoord = geom.getLastCoordinate();
       }
@@ -161,7 +159,7 @@ function addInteraction() {
     sketch = null;
     measureTooltipElement = null;
     createMeasureTooltip();
-    unByKey(listener);
+    unByKey(listener);  //Disables the measurement function after use
   });
 }
 
