@@ -135,7 +135,6 @@ function addInteraction() {
 
   let listener;
   draw.on('drawstart', function (evt) {
-    // set sketch
     sketch = evt.feature;
 
     /** @type {import("../src/ol/coordinate.js").Coordinate|undefined} */
@@ -159,9 +158,7 @@ function addInteraction() {
   draw.on('drawend', function () {
     measureTooltipElement.className = 'ol-tooltip ol-tooltip-static';
     measureTooltip.setOffset([0, -7]);
-    // unset sketch
     sketch = null;
-    // unset tooltip so that a new one can be created
     measureTooltipElement = null;
     createMeasureTooltip();
     unByKey(listener);
@@ -245,7 +242,7 @@ const flightsSource = new VectorSource({
           const flight = flightsData[i];
           const origin = flight[0];
           const destination = flight[1];
-          const arcGenerator = new arc.GreatCircle(
+          const arcGenerator = new arc.GreatCircle( //Initializes the path between the 2 coordinates
             {x: origin[1], 
              y: origin[0]},
             {x: destination[1], 
@@ -265,7 +262,7 @@ const flightsSource = new VectorSource({
               })
             );
           });
-          addLater(features, i * 50);
+          addLater(features, i * 50); 
         }
           
           tileLayer.on('postrender', animateFlights);
@@ -334,7 +331,7 @@ function addLater(features, timeout) {
         start += duration;
       });
       }
-    },timeout);
+    },timeout); //The line is gradually going towards the destination from the origin
 }
 /**
  * End of flight path code
