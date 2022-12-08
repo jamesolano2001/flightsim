@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Flight Simulation</title>
+    <link rel="stylesheet" href="node_modules/ol/ol.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+  </head>
+  <div id="top"><h1>Flight Map Simulation ::: James Olano</h1></div>
+  <body>
+    <div id="options">
+      <button id="start" class="custom-btn btn-1" >Start Simulation</button> <!--Refreshes the page-->
+      <button id="restart" class="custom-btn btn-1" onClick="window.location.reload();">Restart simulation</button> <!--Refreshes the page-->
+      <form>
+        <select id="type">
+          <option value="length">Length (LineString)</option>
+          <option value="area">Area (Polygon)</option>
+        </select>
+      </form>
+    </div>
+    <!-- Pointer events polyfill for old browsers, see https://caniuse.com/#feat=pointer -->
+    <script src="https://unpkg.com/elm-pep@1.0.6/dist/elm-pep.js"></script>
+    <script src="https://api.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js"></script>
+    <script type="module" src="main.js"></script>
+    
+  </body>
+  <div id="map" class="map"></div>
+</html>
